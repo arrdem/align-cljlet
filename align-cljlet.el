@@ -221,8 +221,8 @@
       (while (progn
                (acl-goto-next-pair))
         (if (= current-line (line-number-at-pos))
-            (error "multiple pairs on one line")
-          (setq current-line (line-number-at-pos))))))
+            (insert "\n"))
+        (setq current-line (line-number-at-pos)))))
   t)
 
 (defun acl-respace-single-let (max-width)
